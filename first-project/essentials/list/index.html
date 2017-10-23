@@ -17,16 +17,45 @@
   </head>
   <body>
     <div id="app">
+      <ul>
+        <li v-for="color in colors" v-if="color.primary">{{ color.text }}</li>
+      </ul>
     </div>
-
+    <div id="el"></div>
     <script>
+      var data = {a: 1};
+      var vm = new Vue({
+        el: "#el",
+        data: data
+      });
+
+      vm.$el === document.getElementById('exemplo');
+
       var app = new Vue({
         el: "#app",
         data: {
-
-        },
-        create(){
-          alert(`Hora agora ${Date.now().toLocalString()}`)
+          colors: [
+            {
+              text: 'red',
+              primary: true
+            },
+            {
+              text: 'green',
+              primary: false
+            },
+            {
+              text: 'blue',
+              primary: true
+            },
+            {
+              text: 'yellow',
+              primary: true
+            },
+            {
+              text: 'orange',
+              primary: false
+            }
+          ]
         }
       });
     </script>

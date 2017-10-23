@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>project-vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="row justify-content-md-cente">
+
+          <h3>{{title}}</h3>
+          <div class="col-md-4" v-for="time in times">
+            <div class="panel panel-default fcard">
+              <div class="note">
+                <img :src="time.shield">
+                <p>{{ time.name }}</p>
+                <div class="divide"></div>
+                <div class="body">
+                  <p>Pontos: {{ time.points }}</p>
+                  <p>Gols Marcador: {{ time.gm }}</p>
+                  <p>Gols Sofridos: {{ time.gs }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>
